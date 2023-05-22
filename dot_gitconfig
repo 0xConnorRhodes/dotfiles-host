@@ -1,0 +1,8 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Connor Rhodes
+	email = connor@rhodes.contact
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false
