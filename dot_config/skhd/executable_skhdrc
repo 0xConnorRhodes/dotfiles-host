@@ -75,9 +75,6 @@ shift + alt - i : yabai -m config layout stack || yabai -m config layout bsp
 shift + alt - 0x2F : yabai -m window --display east && yabai -m display --focus east
 shift + alt - 0x2B : yabai -m window --display west && yabai -m display --focus west
 
-# apps and scripts
-#
-
 # focuses the emacs window after opening. emacs client frames don't focus automaticalls
 # TODO: instead of focusing next, use jq to focus emacs on the current space,
 # then emacs on the current space with the highest ID (or some other way of
@@ -92,8 +89,5 @@ shift + alt - n : emacsclient -c -n "~/notes/tmp/jrn/day/dn.$(date +%y-%m-%d).md
 
 # now managed by a custom iterm profile
 #alt - b : osascript /Users/c.rhodes/code/applescripts/notes-search.scpt
-
-# killing the notification center clears some notifications.
-#alt - 0x2A : killall NotificationCenter
 
 # TODO add keybinding to run a script that toggles autoraise (and posts a notification about autoraise on/off. Ideally one that expires very quickly)
