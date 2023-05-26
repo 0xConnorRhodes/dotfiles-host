@@ -1,9 +1,4 @@
 # launch programs
-#alt - return : /Users/c.rhodes/.config/yabai/scripts/new_term.sh
-#alt - return : osascript /Users/c.rhodes/.config/yabai/scripts/new-iterm-window.scpt
-#alt - return : /opt/homebrew/bin/alacritty msg create-window --title Alacritty && sleep .1 ; yabai -m window --focus $(yabai -m query --windows --space | jq '.[] | select(.title=="Alacritty")' | jq .id) ; sleep .1 ; yabai -m window --focus $(yabai -m query --windows --space | jq '.[] | select(.title=="Alacritty")' | jq .id) ; sleep .1 ; yabai -m window --focus $(yabai -m query --windows --space | jq '.[] | select(.title=="Alacritty")' | jq .id)
-#alt - return : /opt/homebrew/bin/alacritty msg create-window --title Alacritty && sleep .1 ; yabai -m window --focus $(yabai -m query --windows --space | jq '.[] | select(.title=="Alacritty")' | jq .id)
-#alt - return : /opt/homebrew/bin/alacritty msg create-window --title Alacritty
 alt - return : osascript /Users/c.rhodes/code/applescripts/newiterm.scpt
 
 
