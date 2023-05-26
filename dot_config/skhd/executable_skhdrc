@@ -69,11 +69,7 @@ shift + alt - i : yabai -m config layout stack || yabai -m config layout bsp
 shift + alt - 0x2F : yabai -m window --display east && yabai -m display --focus east
 shift + alt - 0x2B : yabai -m window --display west && yabai -m display --focus west
 
-# focuses the emacs window after opening. emacs client frames don't focus automaticalls
-# TODO: instead of focusing next, use jq to focus emacs on the current space,
-# then emacs on the current space with the highest ID (or some other way of
-# identifying the emacs window that was most recently opened
-alt - e : emacsclient -c -n && yabai -m window --focus $(yabai -m query --windows --space | jq '.[] | select(.app=="Emacs")' | jq -re ".id" | sort --general-numeric-sort --reverse | head -1) ; sleep .1 ; yabai -m window --focus $(yabai -m query --windows --space | jq '.[] | select(.app=="Emacs")' | jq -re ".id" | sort --general-numeric-sort --reverse | head -1)
+alt - e : emacsclient -c -n
 
 shift + alt - n : emacsclient -c -n "~/notes/tmp/jrn/day/dn.$(date +%y-%m-%d).md"
 
