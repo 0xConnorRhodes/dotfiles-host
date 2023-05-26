@@ -1,8 +1,8 @@
 # launch programs
 alt - return : osascript /Users/c.rhodes/code/applescripts/newiterm.scpt
-
-
+alt - e : emacsclient -c -n
 alt - a : osascript /Users/c.rhodes/.config/yabai/scripts/toggle-voice-control.scpt
+shift + alt - n : emacsclient -c -n "~/notes/tmp/jrn/day/dn.$(date +%y-%m-%d).md"
 
 # TODO add directional stacking bindings with alt + shift WASD
 
@@ -68,9 +68,5 @@ alt - 0x2B : yabai -m display --focus west # , comma
 shift + alt - i : yabai -m config layout stack || yabai -m config layout bsp
 shift + alt - 0x2F : yabai -m window --display east && yabai -m display --focus east
 shift + alt - 0x2B : yabai -m window --display west && yabai -m display --focus west
-
-alt - e : emacsclient -c -n
-
-shift + alt - n : emacsclient -c -n "~/notes/tmp/jrn/day/dn.$(date +%y-%m-%d).md"
 
 # TODO add keybinding to run a script that toggles autoraise (and posts a notification about autoraise on/off. Ideally one that expires very quickly)
