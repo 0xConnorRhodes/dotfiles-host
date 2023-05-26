@@ -1,5 +1,4 @@
 #!/bin/sh
-# !/usr/bin/env zsh
 
 # global settings
 yabai -m config focus_follows_mouse          false
