@@ -29,7 +29,6 @@ call plug#begin('~/.local/share/nvim/plugged')
             Plug 'tweekmonster/startuptime.vim' 
         "{{{ MARKUP }}}
 	    Plug 'https://gitlab.com/dbeniamine/todo.txt-vim.git' "adds todo.txt support to vim
-            Plug '/home/connor/.local/share/nvim/plugged/vimwiki'
 	    Plug 'godlygeek/tabular'
 	    Plug 'danro/rename.vim'
 	    Plug 'dkarter/bullets.vim' "auto insert bullet on newline
@@ -200,8 +199,6 @@ let g:markdown_folding = 1
 "set foldexpr=NestedMarkdownFolds()
 ":set foldtext='\ '.foldtext()
 "let g:markdown_fold_override_foldtext=0
-"autocmd FileType vimwiki set foldexpr=NestedMarkdownFolds()
-"autocmd FileType vimwiki nmap <Tab> za
 "set viewoptions=cursor,folds,slash,unix "for vim-stay
 "let g:fastfold_savehook = 0 "for vim fastfold not update on save
 set nofoldenable " all folds open by default but can still be folded
@@ -270,15 +267,3 @@ augroup neovim_terminal
     " allows you to use Ctrl-c on terminal window
     autocmd TermOpen * nnoremap <buffer> <C-c> i<C-c>
 augroup END
-
-"=================================="
-"             VIM WIKI             "
-"=================================="
-    " ~~~~~ Ensure files are read as what I want in vimwiki:
-        let g:vimwiki_global_ext = 0
-        let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'} "commented out because I want wiki style links in vimwiki syntax
-        let g:vimwiki_root = '~/dox/notes'
-"change 'field' 2 for **default** for vimwiki syntax and **markdown** for markdown syntax
-        let g:vimwiki_list = [
-            \{'path': '~/dox/notes', 'syntax': 'markdown', 'ext': '.md'},
-            \]
