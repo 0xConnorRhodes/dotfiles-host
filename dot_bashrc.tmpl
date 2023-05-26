@@ -12,6 +12,7 @@ fi
 {{- end }}
 
 {{- if eq .chezmoi.username "lima" }}
+# LIMA ensure some executables are available
 PATH="$PATH:/usr/sbin:/sbin"
 export PATH
 {{- end }}
