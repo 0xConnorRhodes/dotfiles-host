@@ -8,7 +8,7 @@ alias cc="cd (fd -t d |fzf)" # cd down the directory structure with fzf
 
 function new-file --wraps ls \
     --description 'return latest file in directory, accepts argument to return earlier files. Aliased to nf and lnf'
-    {{if eq .chezmoi.os "darwin" }}
+    {{if eq .chezmoi.os "darwin"}}
     # if darwin, exclude .DS_Store from the list, else don't check for it
     ls -At1 . | sed '/\.DS_Store/d' | sed -n "$argv[1]p"
     {{else}}
