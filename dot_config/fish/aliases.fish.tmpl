@@ -6,7 +6,7 @@ alias cm="chezmoi"
 alias j="__zoxide_z"
 alias cc="cd (fd -t d |fzf)" # cd down the directory structure with fzf
 
-function nf --wraps ls --secription 'return latest file in directory'
+function nf --wraps ls --description 'return latest file in directory'
     {{if eq .chezmoi.os "darwin" }}
     # if darwin, exclude .DS_Store from the list, else don't check for it
     ls -At1 . | sed '/\.DS_Store/d' | sed -n '1p'
