@@ -19,7 +19,7 @@ dotfiles for all of my machines. managed with https://www.chezmoi.io/
 *My terminal editor*
 
 - `dot_config/nvim/init.vim` - main neovim config file
-- `dotconfig/nvim/after/{ftplugin/syntax}markdown.vim` - markdown config files for neovim
+- `dotconfig/nvim/after/{ftplugin,syntax}markdown.vim` - markdown config files for neovim
 
 ## macOS
 
