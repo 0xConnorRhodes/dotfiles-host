@@ -13,6 +13,9 @@ dotfiles for all of my machines. managed with https://www.chezmoi.io/
 #### Bash
 - `dot_bashrc.tmpl` - bash config. Since I use fish as my interactive shell, most of my .bashrc exec's fish if interactivea nd sets up the necessary executable paths for various shell scripts.
 
+#### fish
+- `dot_config/fish/functions/zoxide.fish` - fish function to use [zoxide](https://github.com/ajeetdsouza/zoxide) to jump to directories
+
 #### Git
 - `dot_gitconfig` - specifies git defaults on the machine
 
