@@ -6,14 +6,18 @@ alias cm="chezmoi"
 alias j="__zoxide_z"
 alias cc="cd (fd -t d |fzf)" # cd down the directory structure with fzf
 
-function nf --wraps ls --description 'return latest file in directory'
+function new-file --wraps ls \
+    --description 'return latest file in directory, accepts argument to return earlier files. Aliased to nf and lnf'
     {{if eq .chezmoi.os "darwin" }}
     # if darwin, exclude .DS_Store from the list, else don't check for it
-    ls -At1 . | sed '/\.DS_Store/d' | sed -n '1p'
+    ls -At1 . | sed '/\.DS_Store/d' | sed -n "$argv[1]p"
     {{else}}
-    ls -At1 . | sed -n '1p'
+    ls -At1 . | sed -n "$argv[1]p"
     {{end}}
 end
+
+alias nf="new-file 1"
+alias lnf="new-file 2"
 
 # git
 alias gs="git status"
