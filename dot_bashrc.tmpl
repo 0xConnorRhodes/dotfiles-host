@@ -4,15 +4,15 @@ then
         exec fish
 fi
 
-{{- if eq .chezmoi.os "linux" }}
+{{if eq .chezmoi.os "linux"}}
 # Source global definitions
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
-{{- end }}
+{{end}}
 
-{{- if eq .chezmoi.username "lima" }}
+{{if eq .chezmoi.username "lima"}}
 # LIMA ensure some executables are available
 PATH="$PATH:/usr/sbin:/sbin"
 export PATH
-{{- end }}
+{{end}}
