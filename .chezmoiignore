@@ -1,2 +1,9 @@
+# globally ignored
 LICENSE
 README.md
+
+# only on macOS
+{{- if ne .chezmoi.os "darwin" }}
+dot_config/yabai
+dot_config/skhd
+{{- end }}
