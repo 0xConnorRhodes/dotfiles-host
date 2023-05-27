@@ -1,1 +1,2 @@
 *.ps1.tmpl linguist-language=powershell
+*.fish.tmpl linguist-language=fish
