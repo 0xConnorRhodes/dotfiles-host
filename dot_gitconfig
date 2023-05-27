@@ -6,3 +6,5 @@
 	defaultBranch = main
 [pull]
 	rebase = false
+
+# vim: filetype=toml

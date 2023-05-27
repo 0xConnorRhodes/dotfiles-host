@@ -8,3 +8,5 @@ README.md
 .config/yabai/
 .config/skhd/
 {{end}}
+
+# vim: filetype=gitignore
