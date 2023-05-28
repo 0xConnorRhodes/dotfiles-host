@@ -1,11 +1,12 @@
 if status is-interactive
     fish_vi_key_bindings
     set -g fish_greeting
+    # source aliases only in interactive shell since I alias some of the coreutils
+    source $HOME/.config/fish/aliases.fish
 end
 
 # source refactored config files
 source $HOME/.config/fish/env.fish
-source $HOME/.config/fish/aliases.fish
 
 # source functions
 source $HOME/.config/fish/functions/zoxide.fish
