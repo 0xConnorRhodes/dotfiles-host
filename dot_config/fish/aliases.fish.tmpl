@@ -4,7 +4,7 @@ alias cm="chezmoi"
 alias cmc="chezmoi cd"
 alias cma="chezmoi apply"
 alias cat="bat --style=plain"
-alias ldk="lazydocker"
+alias ldk="lazydocker" 
 alias sv="sudo (which nvim)"
 
 # remote machines
@@ -34,5 +34,10 @@ alias gs="git status"
 function gcam --wraps git --description 'git commit -a -m'
     git commit -a -m "$argv"
 end
+
+{{if eq .chezmoi.os "darwin" }}
+# macOS only
+alias yo="open -a yoink"
+{{end}}
 
 # vim: filetype=fish
