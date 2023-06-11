@@ -8,8 +8,12 @@ end
 # source refactored config files
 source $HOME/.config/fish/env.fish
 
-# source functions
+# source functions/modules
 source $HOME/.config/fish/functions/zoxide.fish
+
+{{if stat (joinPath .chezmoi.homeDir ".nix-profile/share/fish/vendor_completions.d/asdf.fish")}}
+source $HOME/.nix-profile/share/fish/vendor_completions.d/asdf.fish
+{{end}}
 
 {{if eq .chezmoi.version.builtBy "nixpkgs"}}
 # source built-in nix fish integration if the chezmoi binary was built by nix, indicating nix is installed
