@@ -12,7 +12,7 @@ source $HOME/.config/fish/env.fish
 source $HOME/.config/fish/functions/zoxide.fish
 
 {{if stat (joinPath .chezmoi.homeDir ".nix-profile/share/fish/vendor_completions.d/asdf.fish")}}
-source $HOME/.nix-profile/share/asdf-vm/asdf.fish
+source $HOME/.nix-profile/share/asdf-vm/asdf.fish # allows asdf to control tool versions in fish shell
 source $HOME/.nix-profile/share/fish/vendor_completions.d/asdf.fish
 {{end}}
 
