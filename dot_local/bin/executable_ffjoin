@@ -1,0 +1,37 @@
+#!/usr/bin/env python
+# script to merge all files in the current directory into one file ordered alphanumerically
+# uses the concat demuxer method described here: https://stackoverflow.com/questions/7333232/how-to-concatenate-two-mp4-files-using-ffmpeg
+#
+# usage: ffjoin <merge_extension> <output_file>
+# example: ffjoin mp3 complete-file.mp3
+
+import os
+import sys
+
+# argument definitions
+merge_extension = sys.argv[1]
+output_file = sys.argv[2]
+
+# if output_file arg doesn't have a file extension, add the merge extension onto the end of output_file
+if not '.' in output_file: output_file += f'.{merge_extension}'
+
+# file and dir locations
+list_file_path = 'file_list.txt'
+directory = '.'
+
+# Get the list of files in the directory
+mp3_files = [file for file in os.listdir(directory) if file.endswith(f'.{merge_extension}')]
+mp3_files.sort() # sort the above list alphabetically
+
+# write files into a temporary text file with the poper format
+with open(list_file_path, 'w') as f:
+    for mp3_file in mp3_files:
+        file_path = os.path.join(directory, mp3_file)
+        f.write(f"file '{file_path}'\n")
+
+# Execute the ffmpeg command
+ffmpeg_command = f"ffmpeg -f concat -safe 0 -i {list_file_path} -c copy {output_file}"
+os.system(ffmpeg_command)
+
+# Remove the temporary file
+os.remove(list_file_path)
