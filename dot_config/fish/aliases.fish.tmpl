@@ -13,6 +13,7 @@ alias ipy="ipython"
 alias yd={{ (secretJSON "aliases/yd").data.data.cmd }}
 alias yvl={{ (secretJSON "aliases/yvl").data.data.cmd }}
 alias tmpssh="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+alias ari="aria2c"
 
 # remote machines
 alias ms="mosh s"
@@ -54,6 +55,7 @@ alias tm="trash-put"
 alias yo="open -a yoink"
 alias yf="yo (nf)"
 alias onf="open (nf)"
+alias pipx="python3.9 -m pipx" # pipx is installed with this python version
 {{end}}
 
 # vim: filetype=fish
